@@ -40,7 +40,7 @@ jobs:
     
   release:
     name: Create Release
-    needs: build
+    needs: test
     if: |
       github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
