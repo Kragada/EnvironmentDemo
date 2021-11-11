@@ -37,7 +37,13 @@ jobs:
         dotnet-version: 5.0.x
     - name: Test
       run: dotnet test --verbosity normal
-    
+    - name: Merge Pull Request
+      uses: juliangruber/merge-pull-request-action@v1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        number: 1
+        method: squash  
+  
   release:
     name: Create Release
     needs: test
