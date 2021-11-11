@@ -37,12 +37,10 @@ jobs:
         dotnet-version: 5.0.x
     - name: Test
       run: dotnet test --verbosity normal
-    - name: Merge Pull Request
-      uses: juliangruber/merge-pull-request-action@v1
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        number: 1
-        method: squash  
+    - name: automerge
+      uses: "pascalgn/automerge-action@v0.14.3"
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" 
   
   release:
     name: Create Release

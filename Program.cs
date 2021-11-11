@@ -6,7 +6,7 @@ namespace EnvironmentDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello second World!");
+            Console.WriteLine("Hello second World 2!");
         }
     }
 }
